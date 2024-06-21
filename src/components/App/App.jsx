@@ -16,7 +16,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.contContact}>
       <h1 className={styles.h1}>Phonebook</h1>
       <ContactForm />
       <SearchBox />
