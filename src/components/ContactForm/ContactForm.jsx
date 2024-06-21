@@ -1,8 +1,9 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact, selectContacts } from '../../redux/contactsSlice';
+import { selectContacts } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contactsOps';
 import styles from './ContactForm.module.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -27,7 +28,6 @@ const ContactForm = () => {
     }),
     onSubmit: (values, { resetForm }) => {
       const newContact = {
-        id: nanoid(),
         name: values.name,
         number: values.number,
       };
